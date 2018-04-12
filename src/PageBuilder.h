@@ -151,6 +151,8 @@ public:
 	void exit404(void);
 	void exitCanHandle(PrepareFuncT prepareFunc) { _canHandle = prepareFunc; }
 	void cancel() { _cancel = true; }
+	// AutoConnect crash measure
+	PageElementVT& element() { return _element; }
 
 protected:
 	const char*		_uri;			/**< uri of this page */
