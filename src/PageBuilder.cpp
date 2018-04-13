@@ -93,6 +93,9 @@ bool PageBuilder::_sink(int code, ESP8266WebServer& server) { //, HTTPMethod req
     // send http content to client
     if (!_cancel) {
         server.setContentLength(content.length());
+        // AutoConnect counter measure
+        Serial.printf("[PB] _sink:\n%s\n", content.c_str());
+
         server.send(code, "text/html", content);
     }
     return true;
