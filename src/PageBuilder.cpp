@@ -223,7 +223,7 @@ String PageElement::build() {
 String PageElement::build(const char* mold, TokenVT tokenSource, PageArgument& args) {
     int     contextLength;
     int     scanIndex = 0;
-    String  templ = mold;
+    String  templ = FPSTR(mold);
     String  content = "";
 
     // Determining the origin of the mold.
